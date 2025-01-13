@@ -2,10 +2,31 @@
 export async function registerServiceWorker() {
     if ('serviceWorker' in navigator) {
         try {
+            // Request notification permission early
+            if ('Notification' in window) {
+                const permission = await Notification.requestPermission();
+                if (permission !== 'granted') {
+                    console.warn('Notification permission not granted');
+                }
+            }
+
             const registration = await navigator.serviceWorker.register('/service-worker.js', {
                 scope: '/',
-                type: 'module'
             });
+
+            // Register periodic sync with shorter interval
+            // @ts-ignore
+            const periodicSync = registration.periodicSync;
+            if (periodicSync) {
+                try {
+                    await periodicSync.register('geofence-periodic-sync', {
+                        minInterval: 60 * 1000 // 1 minute
+                    });
+                    console.log('Periodic sync registered successfully');
+                } catch (error) {
+                    console.warn('Periodic sync registration failed:', error);
+                }
+            }
 
             // Handle service worker updates
             if (registration.installing) {
