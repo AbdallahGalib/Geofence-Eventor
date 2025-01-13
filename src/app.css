@@ -1,0 +1,8 @@
+/* Import Tailwind from a module file */
+@import './styles/tailwind.css';
+
+/* Leaflet specific styles */
+:global(.leaflet-container) {
+  height: 100%;
+  width: 100%;
+}

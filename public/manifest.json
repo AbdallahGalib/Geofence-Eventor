@@ -1,0 +1,19 @@
+{
+  "name": "Geofencing PWA",
+  "short_name": "GeofencePWA",
+  "description": "A Progressive Web App for geofencing",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ],
+  "orientation": "any",
+  "categories": ["utilities", "productivity"],
+  "prefer_related_applications": false
+}

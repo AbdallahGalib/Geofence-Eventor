@@ -1,0 +1,16 @@
+{
+  "name": "Geofence PWA",
+  "short_name": "Geofence",
+  "description": "A PWA for managing geofences",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
